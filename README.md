@@ -107,3 +107,6 @@ GigShield ensures secure and fair income protection by combining:
             ↓
 [ External APIs ]
 (Weather API + Maps API)
+
+<img width="1917" height="1064" alt="image" src="https://github.com/user-attachments/assets/8ed733c5-ac4d-4e69-a063-fa63f4231dac" />
+<img width="1918" height="1061" alt="image" src="https://github.com/user-attachments/assets/eb91eb1e-b1cd-425a-ada0-01f1543b9c71" />
