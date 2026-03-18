@@ -1,70 +1,109 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🔒 Adversarial Defense & Anti-Spoofing Strategy
 
-## Available Scripts
+## 1️⃣ Differentiation: Real vs Spoofed Users
 
-In the project directory, you can run:
+Our system goes beyond basic GPS validation by using **multi-layer behavioral intelligence** to distinguish genuine delivery partners from fraudulent actors.
 
-### `npm start`
+* **Movement Analysis**
+  Real users show continuous movement patterns along realistic routes, while spoofed users exhibit:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  * Static positions for long durations
+  * Sudden unrealistic location jumps
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **Speed & Route Consistency**
+  We validate:
 
-### `npm test`
+  * Speed against realistic delivery constraints
+  * Route alignment with road networks using map APIs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **Behavioral Profiling**
+  Each user develops a **historical activity signature** (working hours, routes, delivery frequency).
+  Any deviation is flagged using anomaly detection.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2️⃣ Data Signals Used (Beyond GPS)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To prevent spoofing, GigShield uses **multi-sensor and contextual data fusion**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* 📍 **GPS Data** – location tracking
+* 📱 **Accelerometer & Gyroscope** – detects actual movement
+* 📶 **Network Signals** – tower triangulation & signal strength
+* 🌐 **IP Address Consistency** – detects proxy/VPN anomalies
+* 📲 **Device Fingerprinting** – ensures device authenticity
+* 🕒 **Time-based Patterns** – verifies realistic working hours
+* 🗺️ **Route Validation APIs** – checks road/path feasibility
+* 🌦️ **Weather APIs** – cross-verifies real environmental conditions
 
-### `npm run eject`
+This multi-layer approach ensures **no single-point failure**.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 3️⃣ UX Balance: Fairness for Honest Workers
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+We prioritize **user trust and fairness** while handling fraud detection:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* 🚦 Suspicious claims are **flagged, not rejected immediately**
+* ⏳ Introduce a **“review pending” state** for uncertain cases
+* 📩 Allow users to **submit proof or appeal decisions**
+* 💸 Provide **delayed payouts** instead of outright denial
 
-## Learn More
+👉 This ensures genuine workers are **not penalized due to network issues or extreme conditions**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤖 AI/ML Approach
 
-### Code Splitting
+GigShield integrates **lightweight AI models** for fraud detection:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* **Anomaly Detection Models**
+  Identify unusual patterns in movement, behavior, and claims
 
-### Analyzing the Bundle Size
+* **Clustering Algorithms**
+  Detect coordinated fraud rings (e.g., multiple users showing identical spoofed behavior)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* **Risk Scoring Engine**
+  Each claim is assigned a **fraud risk score** based on multiple signals
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🛡️ System Resilience Strategy
 
-### Advanced Configuration
+* Multi-layer validation prevents **GPS-only attacks**
+* Continuous learning improves detection over time
+* Fraud detection works in **real-time + post-analysis modes**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🎯 Summary
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+GigShield ensures secure and fair income protection by combining:
 
-### `npm run build` fails to minify
+* Behavioral intelligence
+* Multi-sensor validation
+* AI-driven fraud detection
+* User-friendly claim handling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Structure of our project:
+
+[ User (Delivery Partner App) ]
+            ↓
+[ Data Collection Layer ]
+(GPS + Accelerometer + Network + Device Info)
+            ↓
+[ Backend Server (Node.js / API Layer) ]
+            ↓
+[ AI Fraud Detection Engine ]
+(Anomaly Detection + Risk Scoring)
+            ↓
+[ Decision Engine ]
+ → Safe → Instant Payout
+ → Suspicious → Review Queue
+            ↓
+[ Database ]
+(User Data + Claims + History)
+            ↓
+[ External APIs ]
+(Weather API + Maps API)
